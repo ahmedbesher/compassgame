@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <link href="stlye.css" rel="stylesheet">
+    <script>
+        function generateTable(form) {
+            document.getElementById("norh").innerHTML = form.elements["top"].value;
+            document.getElementById("south").innerHTML = form.elements["bottom"].value;
+            document.getElementById("east").innerHTML = form.elements["right"].value;
+            document.getElementById("west").innerHTML = form.elements["left"].value;
+        }
+        function restart(form) {
+            form.reset();
+        }
+        </script>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="">
+    <title>compass project</title>
+</head>
+<h1>Compass Game</h1>
+<h2>the direction letter in ........</h2>
+<body>
+    <noscript>
+        <p>
+        This web page uses JavaScript. For proper results,
+        you must use a web browser with JavaScript enabled.
+        </p>
+        </noscript>
+    <form>
+<table>
+    <tr>
+        <td> <img class="smaller" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fetc.usf.edu%2Fclipart%2F68100%2F68109%2F68109_132_W1-7_s_lg.gif&f=1&nofb=1" alt="arrow" </td> 
+        <td id="norh"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td id="west"></td> <td> <img class="smaller" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fetc.usf.edu%2Fclipart%2F68100%2F68109%2F68109_132_W1-7_s_lg.gif&f=1&nofb=1" alt="arrow" ></td></td>
+        <td id="east"></td>
+    </tr>
+    <tr>
+        <td></td><td id="south"></td><td> <img class="smaller" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fetc.usf.edu%2Fclipart%2F68100%2F68109%2F68109_132_W1-7_s_lg.gif&f=1&nofb=1" alt="arrow" ></td> 
+        <td></td>
+    </tr>
+</table>
+<p>to restart the game press restart. enter S,N,E,W in proper cells then press update </p>
+ <input type="button"  value="restart"  onclick= "restart(this.form);" > <br>
+ <br>
+ top:
+ <input type="text"  maxlength="1" placeholder="#" id="top">
+left:
+<input type="text"  maxlength="1"  placeholder="#" id="left">
+right:
+<input type="text"  maxlength="1" placeholder="#" id="right">
+bottom:
+<input type="text"  maxlength="1" placeholder="#" id="bottom"> <br>
+<br>
+<input type="button"  value="update" 
+onclick="generateTable(this.form);"> <br>
+
+</form>
+</body>
+</html>
