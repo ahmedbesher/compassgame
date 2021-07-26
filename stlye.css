@@ -9,4 +9,6 @@ width:25px;
  height:25px;}
  input {width:50px;
  height:25px;}
+ .rotation {
+ transform : rotate(135deg);}
  

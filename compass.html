@@ -9,6 +9,11 @@
             document.getElementById("east").innerHTML = form.elements["right"].value;
             document.getElementById("west").innerHTML = form.elements["left"].value;
         }
+       function validations (form){
+           var x= form.elements["top"].value;
+           if ( x.value !="n") { document.getElementById("msg").innerHTML = "wrong";
+        }
+       }
         function restart(form) {
             form.reset();
             form.elements["update"].disabled = true;
@@ -29,7 +34,7 @@
     <form>
 <table>
     <tr>
-        <td> <img class="smaller" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fetc.usf.edu%2Fclipart%2F68100%2F68109%2F68109_132_W1-7_s_lg.gif&f=1&nofb=1" alt="arrow" </td> 
+        <td> <img class="smaller rotation" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fetc.usf.edu%2Fclipart%2F68100%2F68109%2F68109_132_W1-7_s_lg.gif&f=1&nofb=1" alt="arrow" </td> 
         <td id="norh"></td>
         <td></td>
     </tr>
@@ -38,7 +43,7 @@
         <td id="east"></td>
     </tr>
     <tr>
-        <td></td><td id="south"></td><td> <img class="smaller" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fetc.usf.edu%2Fclipart%2F68100%2F68109%2F68109_132_W1-7_s_lg.gif&f=1&nofb=1" alt="arrow" ></td> 
+        <td></td><td id="south"></td><td> <img class="smaller rotation" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fetc.usf.edu%2Fclipart%2F68100%2F68109%2F68109_132_W1-7_s_lg.gif&f=1&nofb=1" alt="arrow" ></td> 
         <td></td>
     </tr>
 </table>
@@ -53,11 +58,14 @@ right:
 <input type="text"  maxlength="1" placeholder="#" id="right">
 bottom:
 <input type="text"  maxlength="1" placeholder="#" id="bottom"
-onchange="this.form.elements[`update`].disabled=false;"> <br>
+onchange="this.form.elements[`update`].disabled=false;" 
+> <br>
+
 <br>
 <input type="button"  value="update" disabled id="update"
 onclick="generateTable(this.form);"> <br>
 
 </form>
+<p id="msg"></p>
 </body>
 </html>
