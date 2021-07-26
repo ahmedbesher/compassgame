@@ -11,6 +11,7 @@
         }
         function restart(form) {
             form.reset();
+            form.elements["update"].disabled = true;
         }
         </script>
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="">
@@ -51,9 +52,10 @@ left:
 right:
 <input type="text"  maxlength="1" placeholder="#" id="right">
 bottom:
-<input type="text"  maxlength="1" placeholder="#" id="bottom"> <br>
+<input type="text"  maxlength="1" placeholder="#" id="bottom"
+onchange="this.form.elements[`update`].disabled=false;"> <br>
 <br>
-<input type="button"  value="update" 
+<input type="button"  value="update" disabled id="update"
 onclick="generateTable(this.form);"> <br>
 
 </form>
